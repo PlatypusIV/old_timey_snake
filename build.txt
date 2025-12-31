@@ -1,0 +1,5 @@
+g++ src/main.cpp -o build/test1 -I include/ -L lib/ -lraylib -lopengl32 -lgdi32 -lwinmm
+
+cmake -Bbuild -G "MinGW Makefiles" && make
+
+cmake .. -G "MinGW Makefiles" && make
