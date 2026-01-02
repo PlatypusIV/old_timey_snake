@@ -2,14 +2,14 @@
 
 Food::Food(int x, int y, int size, Color foodColor)
 {
-    position.x = x;
-    position.y = y;
     cellSize = size;
     color = foodColor;
     Image image = LoadImage("../assets/blueberry.png");
     texture = LoadTextureFromImage(image);
     UnloadImage(image);
     scale = 0.01f;
+    cellCount = 20;
+    position = Food::generateRandomPosition();
 };
 
 Food::~Food()
@@ -29,4 +29,14 @@ void Food::draw()
 void Food::clear()
 {
     printf("Clearing food!");
+}
+
+Vector2 Food::generateRandomPosition()
+{
+    // remove magic numbers and make cellsize and cellcount changeable
+    float x = GetRandomValue(0, cellCount * 40 - 1);
+    float y = GetRandomValue(0, cellCount * 40 - 1);
+
+    Vector2 position = Vector2{x, y};
+    return position;
 }

@@ -6,6 +6,7 @@ add_executable(
     snake
     src/main.cpp
     src/food/food.cpp
+    src/snake/snake.cpp
 )
 
 target_include_directories(

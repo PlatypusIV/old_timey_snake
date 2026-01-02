@@ -4,27 +4,21 @@
 Color green = {173, 204, 96, 255};
 Color darkGreen = {43, 51, 24, 255};
 
-int cellSize = 30;
-
-int cellCount = 25;
+const int cellSize = 40;
+const int screenWidth = 800;
+const int screenHeight = 800;
 
 // functions
 int main()
 {
-    // Initialization
-    //--------------------------------------------------------------------------------------
-    const int screenWidth = 800;
-    const int screenHeight = 640;
+    int foodCounter = 0;
+    InitWindow(screenWidth, screenHeight, "Retro Sneg");
 
-    InitWindow(cellSize * cellCount, cellSize * cellCount, "Retro Sneg");
-
-    SetTargetFPS(60); // Set our game to run at 60 frames-per-second
-                      //--------------------------------------------------------------------------------------
-
-    // Color red = {255,0,0,255};
+    SetTargetFPS(60);
     Food food(5, 10, 20, darkGreen);
+    Snake snake = Snake();
 
-    // Main game loop
+    // foodCounter++;
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
 
@@ -39,18 +33,16 @@ int main()
 
         // draw objects AFTER clear
         food.draw();
-
-        // DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
-        // DrawCircle3D(Vector3())
+        snake.draw();
 
         EndDrawing();
-        //----------------------------------------------------------------------------------
     }
 
-    // De-Initialization
-    //--------------------------------------------------------------------------------------
-    CloseWindow(); // Close window and OpenGL context
+    CloseWindow();
 
     return 0;
 }
+
+// void generateFood(){
+
+// }
