@@ -18,13 +18,27 @@ int main()
     Food food(5, 10, 20, darkGreen);
     Snake snake = Snake();
 
+    int movementLimiter = 10;
+    int movementLimitCounter = 0;
+    int score = 0;
+
     // foodCounter++;
     while (!WindowShouldClose()) // Detect window close button or ESC key
     {
 
         // event handling
+        if (IsKeyDown(KEY_RIGHT))
+            snake.changeDirection(Snake::Direction::RIGHT);
+        if (IsKeyDown(KEY_LEFT))
+            snake.changeDirection(Snake::Direction::LEFT);
+        if (IsKeyDown(KEY_UP))
+            snake.changeDirection(Snake::Direction::UP);
+        if (IsKeyDown(KEY_DOWN))
+            snake.changeDirection(Snake::Direction::DOWN);
 
+        
         // updating positions
+
         // drawing objects
         BeginDrawing();
 
@@ -33,6 +47,16 @@ int main()
 
         // draw objects AFTER clear
         food.draw();
+
+        if (movementLimitCounter >= movementLimiter)
+        {
+            snake.move();
+            movementLimitCounter = 0;
+        }
+        else
+        {
+            movementLimitCounter++;
+        }
         snake.draw();
 
         EndDrawing();

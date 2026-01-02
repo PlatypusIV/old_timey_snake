@@ -4,9 +4,25 @@
 
 class Snake
 {
+
+public:
+    enum Direction
+    {
+        UP,
+        DOWN,
+        LEFT,
+        RIGHT,
+    };
+
 private:
+    std::deque<Vector2> body;
+    enum Direction currentDirection;
+
 public:
     Snake();
-    std::deque<Vector2> body;
     void draw();
+    void move();
+    void changeDirection(Direction newDirection);
+    void eatFood();
+    bool checkForCollision();
 };
