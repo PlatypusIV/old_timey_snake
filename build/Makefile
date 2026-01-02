@@ -176,6 +176,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/snake/snake.obj: src/snake/snake.cpp.obj
+.PHONY : src/snake/snake.obj
+
+# target to build an object file
+src/snake/snake.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/snake/snake.cpp.obj
+.PHONY : src/snake/snake.cpp.obj
+
+src/snake/snake.i: src/snake/snake.cpp.i
+.PHONY : src/snake/snake.i
+
+# target to preprocess a source file
+src/snake/snake.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/snake/snake.cpp.i
+.PHONY : src/snake/snake.cpp.i
+
+src/snake/snake.s: src/snake/snake.cpp.s
+.PHONY : src/snake/snake.s
+
+# target to generate assembly for a file
+src/snake/snake.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/snake/snake.cpp.s
+.PHONY : src/snake/snake.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +215,9 @@ help:
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
+	@echo ... src/snake/snake.obj
+	@echo ... src/snake/snake.i
+	@echo ... src/snake/snake.s
 .PHONY : help
 
 

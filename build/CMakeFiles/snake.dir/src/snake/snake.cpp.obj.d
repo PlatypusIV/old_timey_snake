@@ -1,5 +1,6 @@
-CMakeFiles/snake.dir/src/food/food.cpp.obj: \
- E:\repos\tutorials\cpp\raylib\snake\src\food\food.cpp \
+CMakeFiles/snake.dir/src/snake/snake.cpp.obj: \
+ E:\repos\tutorials\cpp\raylib\snake\src\snake\snake.cpp \
+ E:\repos\tutorials\cpp\raylib\snake\src\snake\snake.h \
  E:/repos/tutorials/cpp/raylib/snake/include/config.h \
  C:/mingw64/include/c++/13.2.0/iostream \
  C:/mingw64/include/c++/13.2.0/bits/requires_hosted.h \
@@ -147,7 +148,6 @@ CMakeFiles/snake.dir/src/food/food.cpp.obj: \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
  E:/repos/tutorials/cpp/raylib/snake/src/food/food.h \
- E:/repos/tutorials/cpp/raylib/snake/src/snake/snake.h \
  C:/mingw64/include/c++/13.2.0/deque \
  C:/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
  C:/mingw64/include/c++/13.2.0/bits/stl_deque.h \
