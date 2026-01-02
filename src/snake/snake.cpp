@@ -55,7 +55,7 @@ void Snake::move()
     }
     if (newHeadPosition.y < 0)
     {
-        newHeadPosition.y = 20;
+        newHeadPosition.y = 19;
     }
 
     body.pop_back();
@@ -64,5 +64,8 @@ void Snake::move()
 
 void Snake::changeDirection(Direction newDirection)
 {
+    if (newDirection == Direction::LEFT && currentDirection == Direction::RIGHT)
+        return;
+
     currentDirection = newDirection;
 }

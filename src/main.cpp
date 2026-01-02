@@ -18,7 +18,7 @@ int main()
     Food food(5, 10, 20, darkGreen);
     Snake snake = Snake();
 
-    int movementLimiter = 10;
+    int movementLimiter = 20;
     int movementLimitCounter = 0;
     int score = 0;
 
@@ -36,8 +36,7 @@ int main()
         if (IsKeyDown(KEY_DOWN))
             snake.changeDirection(Snake::Direction::DOWN);
 
-        
-        // updating positions
+                // updating positions
 
         // drawing objects
         BeginDrawing();
