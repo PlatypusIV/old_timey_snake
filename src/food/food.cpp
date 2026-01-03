@@ -1,9 +1,9 @@
 #include "../../include/config.h"
+#include "food.h"
 
-Food::Food(int x, int y, int size, Color foodColor)
+Food::Food(int size)
 {
     cellSize = size;
-    color = foodColor;
     Image image = LoadImage("../assets/blueberry.png");
     texture = LoadTextureFromImage(image);
     UnloadImage(image);
@@ -34,9 +34,10 @@ void Food::clear()
 Vector2 Food::generateRandomPosition()
 {
     // remove magic numbers and make cellsize and cellcount changeable
-    float x = GetRandomValue(0, cellCount * 40 - 1);
-    float y = GetRandomValue(0, cellCount * 40 - 1);
+    float x = GetRandomValue(0, cellCount * cellSize - 1);
+    float y = GetRandomValue(0, cellCount * cellSize - 1);
 
     Vector2 position = Vector2{x, y};
+
     return position;
 }

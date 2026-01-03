@@ -15,7 +15,7 @@ private:
     float scale;
 
 public:
-    Food(int x, int y, int size, Color color);
+    Food(int size);
     ~Food();
     void draw();
     void clear();

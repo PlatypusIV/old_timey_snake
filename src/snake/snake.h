@@ -1,6 +1,5 @@
 #pragma once
 #include "../../include/config.h"
-#include <deque>
 
 class Snake
 {

@@ -152,6 +152,30 @@ src/food/food.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/food/food.cpp.s
 .PHONY : src/food/food.cpp.s
 
+src/game/game.obj: src/game/game.cpp.obj
+.PHONY : src/game/game.obj
+
+# target to build an object file
+src/game/game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/game/game.cpp.obj
+.PHONY : src/game/game.cpp.obj
+
+src/game/game.i: src/game/game.cpp.i
+.PHONY : src/game/game.i
+
+# target to preprocess a source file
+src/game/game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/game/game.cpp.i
+.PHONY : src/game/game.cpp.i
+
+src/game/game.s: src/game/game.cpp.s
+.PHONY : src/game/game.s
+
+# target to generate assembly for a file
+src/game/game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\snake.dir\build.make CMakeFiles/snake.dir/src/game/game.cpp.s
+.PHONY : src/game/game.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -212,6 +236,9 @@ help:
 	@echo ... src/food/food.obj
 	@echo ... src/food/food.i
 	@echo ... src/food/food.s
+	@echo ... src/game/game.obj
+	@echo ... src/game/game.i
+	@echo ... src/game/game.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

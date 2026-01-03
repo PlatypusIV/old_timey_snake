@@ -142,13 +142,18 @@ CMakeFiles/snake.dir/src/main.cpp.obj: \
  C:/mingw64/include/c++/13.2.0/bits/ostream.tcc \
  C:/mingw64/include/c++/13.2.0/istream \
  C:/mingw64/include/c++/13.2.0/bits/istream.tcc \
+ C:/mingw64/include/c++/13.2.0/vector \
+ C:/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
+ C:/mingw64/include/c++/13.2.0/bits/stl_vector.h \
+ C:/mingw64/include/c++/13.2.0/bits/stl_bvector.h \
+ C:/mingw64/include/c++/13.2.0/bits/vector.tcc \
+ C:/mingw64/include/c++/13.2.0/deque \
+ C:/mingw64/include/c++/13.2.0/bits/stl_deque.h \
+ C:/mingw64/include/c++/13.2.0/bits/deque.tcc \
  E:/repos/tutorials/cpp/raylib/snake/include/raylib.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
- E:/repos/tutorials/cpp/raylib/snake/src/food/food.h \
+ E:\repos\tutorials\cpp\raylib\snake\src\game/game.h \
  E:/repos/tutorials/cpp/raylib/snake/src/snake/snake.h \
- C:/mingw64/include/c++/13.2.0/deque \
- C:/mingw64/include/c++/13.2.0/bits/stl_uninitialized.h \
- C:/mingw64/include/c++/13.2.0/bits/stl_deque.h \
- C:/mingw64/include/c++/13.2.0/bits/deque.tcc
+ E:/repos/tutorials/cpp/raylib/snake/src/food/food.h

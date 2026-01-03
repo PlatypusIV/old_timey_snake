@@ -1,6 +1,6 @@
-CMakeFiles/snake.dir/src/snake/snake.cpp.obj: \
- E:\repos\tutorials\cpp\raylib\snake\src\snake\snake.cpp \
- E:\repos\tutorials\cpp\raylib\snake\src\snake\snake.h \
+CMakeFiles/snake.dir/src/game/game.cpp.obj: \
+ E:\repos\tutorials\cpp\raylib\snake\src\game\game.cpp \
+ E:\repos\tutorials\cpp\raylib\snake\src\game\game.h \
  E:/repos/tutorials/cpp/raylib/snake/include/config.h \
  C:/mingw64/include/c++/13.2.0/iostream \
  C:/mingw64/include/c++/13.2.0/bits/requires_hosted.h \
@@ -154,4 +154,6 @@ CMakeFiles/snake.dir/src/snake/snake.cpp.obj: \
  E:/repos/tutorials/cpp/raylib/snake/include/raylib.h \
  C:/mingw64/lib/gcc/x86_64-w64-mingw32/13.2.0/include/stdarg.h \
  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
- C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h
+ C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+ E:/repos/tutorials/cpp/raylib/snake/src/snake/snake.h \
+ E:/repos/tutorials/cpp/raylib/snake/src/food/food.h

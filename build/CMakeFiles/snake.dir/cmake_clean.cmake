@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/snake.dir/src/food/food.cpp.obj"
   "CMakeFiles/snake.dir/src/food/food.cpp.obj.d"
+  "CMakeFiles/snake.dir/src/game/game.cpp.obj"
+  "CMakeFiles/snake.dir/src/game/game.cpp.obj.d"
   "CMakeFiles/snake.dir/src/main.cpp.obj"
   "CMakeFiles/snake.dir/src/main.cpp.obj.d"
   "CMakeFiles/snake.dir/src/snake/snake.cpp.obj"
