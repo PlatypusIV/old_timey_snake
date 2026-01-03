@@ -41,15 +41,15 @@ void Snake::move()
         break;
     }
 
-    if (newHeadPosition.x > 20)
+    if (newHeadPosition.x > 19)
     {
         newHeadPosition.x = 0;
     }
     if (newHeadPosition.x < 0)
     {
-        newHeadPosition.x = 20;
+        newHeadPosition.x = 19;
     }
-    if (newHeadPosition.y > 20)
+    if (newHeadPosition.y > 19)
     {
         newHeadPosition.y = 0;
     }
@@ -64,8 +64,9 @@ void Snake::move()
 
 void Snake::changeDirection(Direction newDirection)
 {
-    if (newDirection == Direction::LEFT && currentDirection == Direction::RIGHT)
+    if (newDirection == RIGHT && currentDirection == LEFT || newDirection == LEFT && currentDirection == RIGHT || newDirection == UP && currentDirection == DOWN || newDirection == DOWN && currentDirection == UP)
+    {
         return;
-
+    }
     currentDirection = newDirection;
 }
