@@ -25,7 +25,7 @@ private:
     int cellSize;
 
 public:
-    Game(int cellSize);
+    Game(int size);
     // Food food;
     std::vector<Food> foodCollection;
     void draw();

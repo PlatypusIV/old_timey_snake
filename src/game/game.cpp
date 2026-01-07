@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(int cellSize)
+Game::Game(int size)
 {
     snake = Snake();
     movementLimiter = 10;
@@ -9,7 +9,8 @@ Game::Game(int cellSize)
     foodLimiter = 10;
     foodSpawnLimiter = 90;
     foodCollection = {};
-    foodCollection.push_back(Food(cellSize));
+    cellSize = size;
+    // foodCollection.push_back(Food(cellSize));
 }
 
 void Game::updateSnakePosition()
@@ -32,7 +33,7 @@ void Game::generateFood()
         // guarantee non clashing later
         foodCollection.push_back(Food(cellSize));
         foodSpawnTimer = 0;
-        printf("Food generated\n");
+        // printf("Food generated\n");
     }
     else
     {

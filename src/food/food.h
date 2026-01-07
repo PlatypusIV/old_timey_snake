@@ -12,13 +12,12 @@ private:
     Vector2 position;
     std::string foodImage;
     int cellCount;
-    float scale;
 
 public:
+    Texture2D texture;
     Food(int size);
     ~Food();
     void draw();
     void clear();
     Vector2 generateRandomPosition();
-    Texture2D texture;
 };

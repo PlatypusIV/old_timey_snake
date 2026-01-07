@@ -4,10 +4,10 @@
 Food::Food(int size)
 {
     cellSize = size;
-    Image image = LoadImage("../assets/blueberry.png");
+    Image image = LoadImage("../assets/blueberrySmall.png");
     texture = LoadTextureFromImage(image);
+
     UnloadImage(image);
-    scale = 0.01f;
     cellCount = 20;
     position = Food::generateRandomPosition();
 };
@@ -21,7 +21,7 @@ void Food::draw()
 {
     // DrawRectangle(position.x * cellSize, position.y * cellSize, cellSize, cellSize, color);
     // DrawTexture(texture, position.x * cellSize, position.y * cellSize, WHITE);
-    DrawTextureEx(texture, position, 0.0f, scale, WHITE);
+    DrawTextureEx(texture, position, 0.0f, 1.0f, GREEN);
 
     // std::cout << texture.width << " " << texture.height << std::endl;
 }

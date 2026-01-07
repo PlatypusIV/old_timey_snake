@@ -1,0 +1,3 @@
+ food generates in the top
+
+ food is of incorrect size and placement
