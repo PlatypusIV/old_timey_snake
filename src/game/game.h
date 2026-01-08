@@ -26,12 +26,13 @@ private:
 
 public:
     Game(int size);
-    // Food food;
-    std::vector<Food> foodCollection;
     void draw();
-    void updateSnakePosition();
+    void updateSnakePositionAndSize();
     void generateFood();
     void handleInput();
+    void checkCollision();
+
+    Food food{cellSize};
 
 private:
 };

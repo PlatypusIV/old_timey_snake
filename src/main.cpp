@@ -25,7 +25,6 @@ int main()
         // event handling
         game.handleInput();
         // updating positions
-        game.generateFood();
         game.updateSnakePosition();
 
         // drawing objects

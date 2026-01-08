@@ -1,15 +1,28 @@
 #include "../../include/config.h"
 #include "food.h"
 
+bool Food::elementExistsInCollection(std::deque<Vector2> collection, Vector2 element)
+{
+    for (unsigned int i = 0; i < collection.size(); i++)
+    {
+        if (Vector2Equals(collection[i], element))
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
 Food::Food(int size)
 {
     cellSize = size;
-    Image image = LoadImage("../assets/blueberrySmall.png");
-    texture = LoadTextureFromImage(image);
+    foodImage = LoadImage("../assets/blueberrySmall.png");
+    texture = LoadTextureFromImage(foodImage);
+    UnloadImage(foodImage);
 
-    UnloadImage(image);
     cellCount = 20;
-    position = Food::generateRandomPosition();
+    position = Food::generateRandomPosition({});
+    std::cout << texture.width << " " << texture.height << std::endl;
 };
 
 Food::~Food()
@@ -21,9 +34,7 @@ void Food::draw()
 {
     // DrawRectangle(position.x * cellSize, position.y * cellSize, cellSize, cellSize, color);
     DrawTexture(texture, position.x * cellSize, position.y * cellSize, WHITE);
-    // DrawTextureEx(texture, position, 0.0f, 1.0f, GREEN);
-
-    // std::cout << texture.width << " " << texture.height << std::endl;
+    // DrawTextureEx(texture, position, 0.0f, 0.01f, WHITE);
 }
 
 void Food::clear()
@@ -31,13 +42,15 @@ void Food::clear()
     printf("Clearing food!");
 }
 
-Vector2 Food::generateRandomPosition()
+Vector2 Food::generateRandomPosition(std::deque<Vector2> snakeBody)
 {
-    // remove magic numbers and make cellsize and cellcount changeable
     float x = GetRandomValue(0, cellCount - 1);
     float y = GetRandomValue(0, cellCount - 1);
 
     Vector2 position = Vector2{x, y};
-
+    if (Food::elementExistsInCollection(snakeBody, position))
+    {
+        return Food::generateRandomPosition(snakeBody);
+    }
     return position;
 }

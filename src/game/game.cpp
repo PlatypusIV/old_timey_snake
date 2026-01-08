@@ -5,20 +5,18 @@ Game::Game(int size)
     snake = Snake();
     movementLimiter = 10;
     movementLimitCounter = 0;
-    foodSpawnTimer = 0;
-    foodLimiter = 10;
-    foodSpawnLimiter = 90;
-    foodCollection = {};
     cellSize = size;
-    // foodCollection.push_back(Food(cellSize));
+    food = Food(cellSize);
 }
 
-void Game::updateSnakePosition()
+void Game::updateSnakePositionAndSize()
 {
+    
     if (movementLimitCounter >= movementLimiter)
     {
         snake.move();
         movementLimitCounter = 0;
+        checkCollision();
     }
     else
     {
@@ -28,25 +26,12 @@ void Game::updateSnakePosition()
 
 void Game::generateFood()
 {
-    if (foodCollection.size() < foodLimiter && foodSpawnTimer >= foodSpawnLimiter)
-    {
-        // guarantee non clashing later
-        foodCollection.push_back(Food(cellSize));
-        foodSpawnTimer = 0;
-        // printf("Food generated\n");
-    }
-    else
-    {
-        foodSpawnTimer++;
-    }
 }
 
 void Game::draw()
 {
-    for (int i = 0; i < foodCollection.size(); i++)
-    {
-        foodCollection[i].draw();
-    }
+    food.draw();
+
     snake.draw();
 }
 
@@ -60,4 +45,16 @@ void Game::handleInput()
         snake.changeDirection(Snake::Direction::UP);
     if (IsKeyDown(KEY_DOWN))
         snake.changeDirection(Snake::Direction::DOWN);
+}
+
+void Game::checkCollision()
+{
+    if (Vector2Equals(snake.body[0], food.position))
+    {
+        food.position = food.generateRandomPosition(snake.body);
+
+        printf("Food has been eaten!\n");
+    }
+
+    // implement collision checking for snake
 }

@@ -14,10 +14,10 @@ public:
     };
 
 private:
-    std::deque<Vector2> body;
     enum Direction currentDirection;
 
 public:
+    std::deque<Vector2> body;
     Snake();
     void draw();
     void move();

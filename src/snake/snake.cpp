@@ -14,8 +14,7 @@ void Snake::draw()
         float y = body[i].y * 40;
 
         Rectangle segment = Rectangle{x, y, 40.0f, 40.0f};
-        // DrawRectangleRounded(segment, 0.5, 6, BLACK);
-        DrawRectangleRounded(segment, 0.0f, 6, BLACK);
+        DrawRectangleRounded(segment, 0.5, 6, BLACK);
     }
 }
 
