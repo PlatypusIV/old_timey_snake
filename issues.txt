@@ -1,3 +1,5 @@
- food generates in the top
+ food generates in the top, fixed
 
- food is of incorrect size and placement
+ food is of incorrect size and placement, fixed
+
+ food does not load texture
