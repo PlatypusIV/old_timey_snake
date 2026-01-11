@@ -20,9 +20,9 @@ private:
     int movementLimiter;
     int movementLimitCounter;
     int score;
-    int foodSpawnTimer;
-    int foodLimiter;
     int cellSize;
+    double lastUpdateTime;
+    double interval;
 
 public:
     Game(int size);

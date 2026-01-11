@@ -7,20 +7,18 @@ Game::Game(int size)
     movementLimitCounter = 0;
     cellSize = size;
     food = Food(cellSize);
+    lastUpdateTime - 0;
+    interval = 0.2;
 }
 
 void Game::updateSnakePositionAndSize()
 {
-    
-    if (movementLimitCounter >= movementLimiter)
+    double currentTime = GetTime();
+    if (currentTime - lastUpdateTime >= interval)
     {
         snake.move();
-        movementLimitCounter = 0;
+        lastUpdateTime = currentTime;
         checkCollision();
-    }
-    else
-    {
-        movementLimitCounter++;
     }
 }
 

@@ -25,7 +25,7 @@ int main()
         // event handling
         game.handleInput();
         // updating positions
-        game.updateSnakePosition();
+        game.updateSnakePositionAndSize();
 
         // drawing objects
         BeginDrawing();
@@ -43,7 +43,3 @@ int main()
 
     return 0;
 }
-
-// void generateFood(){
-
-// }
