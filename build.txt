@@ -7,3 +7,4 @@ cmake -Bbuild -G "MinGW Makefiles" && make
 cmake .. -G "MinGW Makefiles" && make && .\snake.exe
 
 ---- Linux
+
