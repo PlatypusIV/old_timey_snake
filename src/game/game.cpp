@@ -2,15 +2,21 @@
 
 Game::Game(int size)
 {
+    InitAudioDevice();
     snake = Snake();
-    movementLimiter = 10;
-    movementLimitCounter = 0;
     cellSize = size;
     food = Food(cellSize);
     lastUpdateTime - 0;
     interval = 0.2;
     isGamePaused = false;
     score = 0;
+    eatSound = LoadSound("../assets/yoshi.mp3");
+}
+
+Game::~Game()
+{
+    UnloadSound(eatSound);
+    CloseAudioDevice();
 }
 
 void Game::updateSnakePositionAndSize()
@@ -31,7 +37,6 @@ void Game::updateSnakePositionAndSize()
 void Game::draw()
 {
     food.draw();
-
     snake.draw();
 }
 
@@ -73,10 +78,10 @@ void Game::checkCollision()
     {
         food.position = food.generateRandomPosition(snake.body);
         snake.eatFood();
+        PlaySound(eatSound);
+        score++;
         printf("Food has been eaten!\n");
     }
-
-    // implement collision checking for snake
 }
 
 void Game::gameOver()
@@ -86,4 +91,10 @@ void Game::gameOver()
     currentGameState = GameState::SCORE;
     snake.reset();
     food.generateRandomPosition(snake.body);
+    score = 0;
+}
+
+unsigned int Game::getScore()
+{
+    return score;
 }

@@ -22,7 +22,6 @@ Food::Food(int size)
 
     cellCount = 20;
     position = Food::generateRandomPosition({});
-    std::cout << texture.width << " " << texture.height << std::endl;
 };
 
 Food::~Food()
@@ -33,7 +32,7 @@ Food::~Food()
 void Food::draw()
 {
     // DrawRectangle(position.x * cellSize, position.y * cellSize, cellSize, cellSize, color);
-    DrawTexture(texture, position.x * cellSize, position.y * cellSize, WHITE);
+    DrawTexture(texture, position.x * cellSize + 75, position.y * cellSize + 75, WHITE);
     // DrawTextureEx(texture, position, 0.0f, 0.01f, WHITE);
 }
 
