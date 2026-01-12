@@ -20,7 +20,6 @@ private:
     int fps;
     int movementLimiter;
     int movementLimitCounter;
-    int score;
     int cellSize;
     double lastUpdateTime;
     double interval;

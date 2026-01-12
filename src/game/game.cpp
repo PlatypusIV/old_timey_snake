@@ -37,22 +37,22 @@ void Game::draw()
 
 void Game::handleInput()
 {
-    if (IsKeyDown(KEY_RIGHT))
+    if (IsKeyPressed(KEY_RIGHT))
     {
         snake.changeDirection(Snake::Direction::RIGHT);
         isGamePaused = false;
     }
-    if (IsKeyDown(KEY_LEFT))
+    if (IsKeyPressed(KEY_LEFT))
     {
         snake.changeDirection(Snake::Direction::LEFT);
         isGamePaused = false;
     }
-    if (IsKeyDown(KEY_UP))
+    if (IsKeyPressed(KEY_UP))
     {
         snake.changeDirection(Snake::Direction::UP);
         isGamePaused = false;
     }
-    if (IsKeyDown(KEY_DOWN))
+    if (IsKeyPressed(KEY_DOWN))
     {
         snake.changeDirection(Snake::Direction::DOWN);
         isGamePaused = false;
@@ -62,7 +62,7 @@ void Game::handleInput()
 void Game::checkCollision()
 {
     // use pointers or references here
-    for (unsigned int i = 1; i < snake.body.size(); i++)
+    for (unsigned int i = 2; i < snake.body.size(); i++)
     {
         if (Vector2Equals(snake.body[0], snake.body[i]))
         {
