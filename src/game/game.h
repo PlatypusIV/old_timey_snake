@@ -12,7 +12,8 @@ public:
         PLAY,
         SCORE,
     };
-    int foodSpawnLimiter;
+    GameState currentGameState = GameState::PLAY;
+    bool isGamePaused;
 
 private:
     Snake snake;
@@ -23,6 +24,7 @@ private:
     int cellSize;
     double lastUpdateTime;
     double interval;
+    int score;
 
 public:
     Game(int size);
@@ -31,6 +33,7 @@ public:
     void generateFood();
     void handleInput();
     void checkCollision();
+    void gameOver();
 
     Food food{cellSize};
 

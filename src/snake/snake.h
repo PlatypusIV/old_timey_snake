@@ -15,6 +15,7 @@ public:
 
 private:
     enum Direction currentDirection;
+    bool addSegment;
 
 public:
     std::deque<Vector2> body;
@@ -24,4 +25,5 @@ public:
     void changeDirection(Direction newDirection);
     void eatFood();
     bool checkForCollision();
+    void reset();
 };
