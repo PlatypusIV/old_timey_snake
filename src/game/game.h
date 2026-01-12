@@ -24,7 +24,7 @@ private:
     unsigned int score;
 
 public:
-    Game(int size);
+    Game(unsigned int size);
     ~Game();
     void draw();
     void updateSnakePositionAndSize();
@@ -34,6 +34,7 @@ public:
     void gameOver();
     unsigned int getScore();
     Sound eatSound;
+    Sound deathSound;
 
     Food food{cellSize};
 };

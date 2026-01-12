@@ -13,9 +13,9 @@ private:
 
 public:
     Vector2 position;
-    Image foodImage;
-    Texture2D texture;
-    Food(int size);
+    // Image foodImage;
+    // Texture2D texture;
+    Food(unsigned int size);
     ~Food();
     void draw();
     void clear();

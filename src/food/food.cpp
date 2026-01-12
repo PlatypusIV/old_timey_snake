@@ -1,24 +1,12 @@
 #include "../../include/config.h"
 #include "food.h"
 
-bool Food::elementExistsInCollection(std::deque<Vector2> collection, Vector2 element)
-{
-    for (unsigned int i = 0; i < collection.size(); i++)
-    {
-        if (Vector2Equals(collection[i], element))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-
-Food::Food(int size)
+Food::Food(unsigned int size)
 {
     cellSize = size;
-    foodImage = LoadImage("../assets/blueberrySmall.png");
-    texture = LoadTextureFromImage(foodImage);
-    UnloadImage(foodImage);
+    // foodImage = LoadImage("../assets/blueberrySmall.png");
+    // texture = LoadTextureFromImage(foodImage);
+    // UnloadImage(foodImage);
 
     cellCount = 20;
     position = Food::generateRandomPosition({});
@@ -26,13 +14,13 @@ Food::Food(int size)
 
 Food::~Food()
 {
-    UnloadTexture(texture);
+    // UnloadTexture(texture);
 }
 
 void Food::draw()
 {
-    // DrawRectangle(position.x * cellSize, position.y * cellSize, cellSize, cellSize, color);
-    DrawTexture(texture, position.x * cellSize + 75, position.y * cellSize + 75, WHITE);
+    DrawRectangle(position.x * cellSize + 75, position.y * cellSize + 75, cellSize, cellSize, BLACK);
+    // DrawTexture(texture, position.x * cellSize + 75, position.y * cellSize + 75, WHITE);
     // DrawTextureEx(texture, position, 0.0f, 0.01f, WHITE);
 }
 
@@ -52,4 +40,16 @@ Vector2 Food::generateRandomPosition(std::deque<Vector2> snakeBody)
         return Food::generateRandomPosition(snakeBody);
     }
     return position;
+}
+
+bool Food::elementExistsInCollection(std::deque<Vector2> collection, Vector2 element)
+{
+    for (unsigned int i = 0; i < collection.size(); i++)
+    {
+        if (Vector2Equals(collection[i], element))
+        {
+            return true;
+        }
+    }
+    return false;
 }

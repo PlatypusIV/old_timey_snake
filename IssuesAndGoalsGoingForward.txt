@@ -1,0 +1,15 @@
+ food generates in the top, fixed
+
+ food is of incorrect size and placement, fixed
+
+ food does not load texture
+
+ textures get unloaded on every copy due to the Destructor
+
+ Textures have completely broken
+
+ Add MENU
+
+ Add score screen
+
+ Add death sound randomizer

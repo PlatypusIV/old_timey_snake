@@ -46,6 +46,7 @@ int main()
         // draw objects AFTER clear
         DrawText("Old timey sneg", border - 5, 20, 40, BLACK);
         DrawText(TextFormat("Score: %i", game.getScore()), 600, 20, 40, BLACK);
+        DrawText("Use arrow keys or WASD to move.", border - 5, screenHeight + border + 10, 40, BLACK);
         DrawRectangleLinesEx(borderRectangle, borderRectangleThickness, borderRectangleColor);
         game.draw();
 

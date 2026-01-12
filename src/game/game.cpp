@@ -1,6 +1,6 @@
 #include "game.h"
 
-Game::Game(int size)
+Game::Game(unsigned int size)
 {
     InitAudioDevice();
     snake = Snake();
@@ -11,6 +11,7 @@ Game::Game(int size)
     isGamePaused = false;
     score = 0;
     eatSound = LoadSound("../assets/yoshi.mp3");
+    deathSound = LoadSound("../assets/bruh-meme-sound-effect.mp3");
 }
 
 Game::~Game()
@@ -42,22 +43,22 @@ void Game::draw()
 
 void Game::handleInput()
 {
-    if (IsKeyPressed(KEY_RIGHT))
+    if (IsKeyPressed(KEY_RIGHT) || IsKeyPressed(KEY_D))
     {
         snake.changeDirection(Snake::Direction::RIGHT);
         isGamePaused = false;
     }
-    if (IsKeyPressed(KEY_LEFT))
+    if (IsKeyPressed(KEY_LEFT) || IsKeyPressed(KEY_A))
     {
         snake.changeDirection(Snake::Direction::LEFT);
         isGamePaused = false;
     }
-    if (IsKeyPressed(KEY_UP))
+    if (IsKeyPressed(KEY_UP) || IsKeyPressed(KEY_W))
     {
         snake.changeDirection(Snake::Direction::UP);
         isGamePaused = false;
     }
-    if (IsKeyPressed(KEY_DOWN))
+    if (IsKeyPressed(KEY_DOWN) || IsKeyPressed(KEY_S))
     {
         snake.changeDirection(Snake::Direction::DOWN);
         isGamePaused = false;
@@ -86,6 +87,7 @@ void Game::checkCollision()
 
 void Game::gameOver()
 {
+    PlaySound(deathSound);
     isGamePaused = true;
     printf("GAME OVER!\n");
     currentGameState = GameState::SCORE;
